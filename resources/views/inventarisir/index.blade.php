@@ -26,11 +26,10 @@
             <th>kondisi</th>
             <th>keterangan</th>
             <th>jumlah</th>
-            <th>ID Jenis</th>
+            <th>Jenis</th>
             <th>Tanggal register</th>
-            <th>ID Ruang</th>
-            <th>Kode Inventaris</th>
-            <th>id_petugas</th>
+            <th>Ruangan</th>
+            <th>Petugas</th>
 
             <th width="280px">Action</th>
         </tr>
@@ -42,11 +41,10 @@
             <td>{{ $inventarisir->kondisi}}</td>
             <td>{{ $inventarisir->keterangan}}</td>
             <td>{{ $inventarisir->jumlah}}</td>
-            <td>{{ $inventarisir->id_jenis}}</td>
+            <td>{{ $inventarisir->nama_jenis}}</td>
             <td>{{ $inventarisir->tanggal_register}}</td>
-            <td>{{ $inventarisir->id_ruang}}</td>
-            <td>{{ $inventarisir->kode_inventaris}}</td>
-            <td>{{ $inventarisir->id_petugas}}</td>
+            <td>{{ $inventarisir->nama_ruangan}}</td>
+            <td>{{ $inventarisir->nama_petugas}}</td>
             <td>
                 <form action="{{ route('inventarisir.destroy',$inventarisir->id) }}" method="POST">
    

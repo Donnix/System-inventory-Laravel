@@ -19,13 +19,13 @@
                 {{ $pet->nama_petugas }}
             </div>
         </div>
-        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>ID Level:</strong>
-                {{ $pet->id_level }}
+                <strong>Jenis Kelamin:</strong>
+                {{ $pet->jk_petugas }}
             </div>
         </div>
+       
          <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Username:</strong>
@@ -36,6 +36,12 @@
             <div class="form-group">
                 <strong>Password:</strong>
                 {{ $pet->password }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama Level:</strong>
+                {{ $pet->nama_level }}
             </div>
         </div>
         

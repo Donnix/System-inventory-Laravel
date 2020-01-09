@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pet;
+use App\Level;
 use Illuminate\Http\Request;
 
 class PetController extends Controller
@@ -25,9 +26,12 @@ class PetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-         return view('pets.create');
+         
+        $pet = Pet::get();
+        $levels=Level::all();
+         return view('pets.create',['pet' => $pet],compact('levels',$levels));
     }
 
     /**
@@ -40,11 +44,13 @@ class PetController extends Controller
     {
        $request->validate([
             
-            'nama_petugas' => 'required',
-            
-            'nama_petugas' => 'required',
-            'username' => 'required',
-            'password' => 'required',
+         
+          'nama_petugas' => 'required',
+          'jk_petugas' => 'required',
+          'nama_petugas' => 'required',
+          'username' => 'required',
+          'password' => 'required',
+          'nama_level' => 'required',
         ]);
   
         Pet::create($request->all());
@@ -72,7 +78,8 @@ class PetController extends Controller
      */
     public function edit(Pet $pet)
     {
-         return view('pets.edit',compact('pet'));
+     $levels=Level::get();
+         return view('pets.edit',compact('levels','pet'));
     }
 
     /**
@@ -87,10 +94,11 @@ class PetController extends Controller
  $request->validate([
             
             'nama_petugas' => 'required',
-          
+            'jk_petugas' => 'required',
             'nama_petugas' => 'required',
             'username' => 'required',
             'password' => 'required',
+            'nama_level' => 'required',
             
         ]);
   

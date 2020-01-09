@@ -7,7 +7,7 @@
                 <h2>FORM Jenis</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('jenis.create') }}"> Add New Jenis</a>
+                <a class="btn btn-success" href="{{ route('types.create') }}"> Add New Jenis</a>
             </div>
         </div>
     </div>
@@ -28,21 +28,21 @@
            
             <th width="280px">Action</th>
         </tr>
-        @foreach ($jenises as $jenis)
+        @foreach ($jenises as $type)
         <tr>
         <td>{{ ++$i }}</td>
-            <td>{{ $jenis->id }}</td>
-            <td>{{ $jenis->nama_jenis }}</td>
-            <td>{{ $jenis->kode_jenis }}</td>
-            <td>{{ $jenis->keterangan}}</td>
+            <td>{{ $type->id }}</td>
+            <td>{{ $type->nama_jenis }}</td>
+            <td>{{ $type->kode_jenis }}</td>
+            <td>{{ $type->keterangan}}</td>
            
     
             <td>
-                <form action="{{ route('jenis.destroy',$jenis->id) }}" method="POST">
+                <form action="{{ route('types.destroy',$type->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('jenis.show',$jenis->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('types.show',$type->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('jenis.edit',$jenis->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('types.edit',$type->id) }}">Edit</a>
    
                     @csrf   
                     @method('DELETE')
@@ -54,6 +54,6 @@
         @endforeach
     </table>
   
-    {!! $jenises->links() !!}
+    {!! $types->links() !!}
       
 @endsection

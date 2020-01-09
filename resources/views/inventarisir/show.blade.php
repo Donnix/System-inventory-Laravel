@@ -46,8 +46,8 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>id_jenis:</strong>
-                {{ $inventarisir->id_jenis }}
+                <strong>Jenis:</strong>
+                {{ $inventarisir->nama_jenis }}
             </div>
         </div>
 
@@ -60,21 +60,15 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>id_ruang:</strong>
-                {{ $inventarisir->id_ruang }}
+                <strong>Ruangan:</strong>
+                {{ $inventarisir->nama_ruang }}
             </div>
         </div>
-        
+     
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>kode_inventaris:</strong>
-                {{ $inventarisir->kode_inventaris }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>id petugas:</strong>
-                {{ $inventarisir->id_petugas }}
+                <strong>petugas:</strong>
+                {{ $inventarisir->nama_petugas }}
             </div>
         </div>
         

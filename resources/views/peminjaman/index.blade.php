@@ -25,7 +25,7 @@
             <th>Tanggal Pinjam</th>
             <th>Tanggal Kembali</th>
             <th>Status Peminjaman</th>
-            <th>ID Pegawai</th>
+            <th>NamaPegawai</th>
 
             <th width="280px">Action</th>
         </tr>
@@ -36,7 +36,7 @@
             <td>{{ $peminjaman->tanggal_pinjam }}</td>
             <td>{{ $peminjaman->tanggal_kembali}}</td>
             <td>{{ $peminjaman->status_peminjaman}}</td>
-            <td>{{ $peminjaman->id_pegawai}}</td>
+            <td>{{ $peminjaman->nama_pegawai}}</td>
             <td>
                 <form action="{{ route('peminjaman.destroy',$peminjaman->id) }}" method="POST">
    

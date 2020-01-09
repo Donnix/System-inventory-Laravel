@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Peminjaman;
+use App\Pegawai;
 use Illuminate\Http\Request;
 
 class PeminjamanController extends Controller
@@ -25,9 +26,11 @@ class PeminjamanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('peminjaman.create');
+        $peminjaman = Peminjaman::get();
+        $pegawais=Pegawai::all();
+         return view('peminjaman.create',['peminjaman' => $peminjaman],compact('pegawais',$pegawais));
     }
 
     /**
@@ -43,7 +46,7 @@ class PeminjamanController extends Controller
             'tanggal_pinjam'=>'required',
             'tanggal_kembali'=>'required',
             'status_peminjaman'=>'required',
-            'id_pegawai'=>'required',
+            'nama_pegawai'=>'required',
         ]);
 
         Peminjaman::create($request->all());
@@ -70,7 +73,9 @@ class PeminjamanController extends Controller
      */
     public function edit(Peminjaman $peminjaman)
     {
-        return view('peminjaman.edit',compact('peminjaman'));
+        $pegawais=Pegawai::get();
+        
+        return view('peminjaman.edit',compact('pegawais','peminjaman'));
     }
 
     /**
@@ -86,7 +91,7 @@ class PeminjamanController extends Controller
             'tanggal_pinjam'=>'required',
             'tanggal_kembali'=>'required',
             'status_peminjaman'=>'required',
-            'id_pegawai'=>'required',
+            'nama_pegawai'=>'required',
         ]);
         $peminjaman->update($request->all());
   

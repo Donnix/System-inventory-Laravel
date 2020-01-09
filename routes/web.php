@@ -21,10 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('logins','AuthController');
 Route::resource('register','AuthController');
 Route::resource('level','LevelController');
-Route::resource('jenis','JenisController');
-Route::resource('crew','CrewController');
-Route::get('/crew/create', 'CrewController@create')->name('create');
+Route::resource('type','TypeController');
+
 Route::resource('peminjaman','PeminjamanController');
 Route::resource('inventarisir','InventarisirController');
 Route::resource('pets','PetController');
 Route::resource('ruangs','RuangController');
+Route::resource('pegawai','PegawaiController');

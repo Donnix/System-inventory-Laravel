@@ -6,7 +6,7 @@
                 <h2> Show Jenis</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('jenis.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('types.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -15,27 +15,27 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>ID Jenis:</strong>
-                {{ $jenis->id }}</div>
+                {{ $type->id }}</div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>NAMA Jenis:</strong>
-                {{ $jenis->nama_level }}
+                {{ $type->nama_level }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>KODE Jenis:</strong>
-                {{ $jenis->nama_level }}
+                {{ $type->nama_level }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>DETAIL Jenis:</strong>
-                {{ $jenis->keterangan }}
+                {{ $type->keterangan }}
             </div>
         </div>
         

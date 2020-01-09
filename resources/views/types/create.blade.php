@@ -7,7 +7,7 @@
             <h2>Tambahkan Jenis</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('jenis.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('types.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
     </div>
 @endif
    
-<form action="{{ route('jenis.store') }}" method="POST">
+<form action="{{ route('types.store') }}" method="POST">
     @csrf
   
      <div class="row">
@@ -31,7 +31,7 @@
      <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nama Jenis</strong>
-                <input type="text" name="nama_jenis" class="form-control" placeholder=" Masukan Nama jenis">
+                <input type="text" name="nama_jenis" class="form-control" placeholder=" Masukan Nama types">
             </div>
         </div>
 

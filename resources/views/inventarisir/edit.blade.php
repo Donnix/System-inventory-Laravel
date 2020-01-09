@@ -57,8 +57,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>idjenis </strong>
-                <input type="text"  value="{{$inventarisir->id_jenis}}" name="id_jenis" class="form-control" placeholder=" Masukan id jenis ">
+                <strong>Jenis</strong>
+                <select class="form-control" name="nama_jenis" id="nama_jenis">
+                    @foreach($jenises as $jenis)
+                    <option value="{{$jenis->nama_jenis}}" @if($inventarisir->nama_jenis == $jenis->nama_jenis)selected @endif>{{$jenis->nama_jenis}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -67,24 +71,30 @@
                 <input type="date"  value="{{$inventarisir->tanggal_register}}" name="tanggal_register" class="form-control" >
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Id ruang</strong>
-                <input type="text"  value="{{$inventarisir->id_ruang}}" name="id_ruang" class="form-control" placeholder=" MasukanID Ruang">
+                <strong>Ruangan</strong>
+                <select class="form-control" name="nama_ruangan" id="nama_ruangan">
+                    @foreach($ruangs as $ruang)
+                    <option value="{{$ruang->nama_ruangan}}" @if($inventarisir->nama_ruangan == $ruang->nama_ruangan)selected @endif>{{$ruang->nama_ruangan}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
+      
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>kode inventaris</strong>
-                <input type="text"  value="{{$inventarisir->kode_inventaris}}" name="kode_inventaris" class="form-control" placeholder=" Masukan Kode Inventaris">
+                <strong>Petugas</strong>
+                <select class="form-control" name="nama_petugas" id="nama_petugas">
+                    @foreach($pets as $pet)
+                    <option value="{{$pet->nama_petugas}}" @if($inventarisir->nama_petugas == $pet->nama_petugas)selected @endif>{{$pet->nama_petugas}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Id petugas</strong>
-                <input type="text"  value="{{$inventarisir->id_petugas}}" name="id_petugas" class="form-control" placeholder=" MasukanID petugas">
-            </div>
-        </div>
+      
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

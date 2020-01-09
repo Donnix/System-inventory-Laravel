@@ -24,9 +24,10 @@
             <th>NO</th>
             <th>ID Petugas</th>
             <th>Nama Petugas</th>
-            <th>ID Level</th>
+            <th>JK Petugas</th>
             <th>Username</th>
             <th>Password</th>
+            <th>Nama Level</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($pets as $pet)
@@ -34,9 +35,10 @@
             <td>{{ ++$i }}</td>
             <td>{{ $pet->id }}</td>
             <td>{{ $pet->nama_petugas }}</td>
-            <td>{{ $pet->id_level }}</td>
+            <td>{{ $pet->jk_petugas }}</td>
             <td>{{ $pet->username }}</td>
             <td>{{ $pet->password }}</td>
+            <td>{{ $pet->nama_level }}</td>
             <td>
                 <form action="{{ route('pets.destroy',$pet->id) }}" method="POST">
    

@@ -43,7 +43,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>id Pegawai:</strong>
-                {{ $peminjaman->id_pegawai }}
+                {{ $peminjaman->nama_pegawai }}
             </div>
         </div>
         

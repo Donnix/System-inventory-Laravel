@@ -8,7 +8,7 @@ class Pet extends Model
 {
     protected $table='employes';
     protected $fillable = [
-        'nama_petugas','id_level','username','password'
+        'nama_petugas','jk_petugas','username','password','nama_level',
             ];
 }
           

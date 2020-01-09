@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Jenis;
+use App\Pegawai;
 use Illuminate\Http\Request;
 
-class JenisController extends Controller
+class PegawaiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class JenisController extends Controller
      */
     public function index()
     {
-        $jenises = Jenis::latest()->paginate(5);
-        
-        return view('jenis.index',compact('jenises'))
+        $pegawais = Pegawai::latest()->paginate(5);
+  
+        return view('pegawai.index',compact('pegawais'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class JenisController extends Controller
      */
     public function create()
     {
-        return view('jenis.create');
+        return view('pegawai.create'); 
     }
 
     /**
@@ -39,72 +39,73 @@ class JenisController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_jenis'=>'required',
-            'kode_jenis'=>'required',
-            'keterangan'=>'required',
+            'nama_pegawai'=>'required',
+            'nip'=>'required',
+            'jk_pegawai'=>'required',
+            'nohp_pegawai'=>'required',
+            'alamat'=>'required',
         ]);
 
-        Jenis::create($request->all());
-        return redirect()->route('jenis.index')
+        Pegawai::create($request->all());
+        return redirect()->route('pegawai.index')
         ->with('Berhasil','Data Berhasil Ditambahkan.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Jenis  $jenis
+     * @param  \App\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function show(Jenis $jenis)
+    public function show(Pegawai $pegawai)
     {
-        return view('jenis.show',compact('jenis'));
+        return view('pegawai.show',compact('pegawai'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Jenis  $jenis
+     * @param  \App\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jenis $jenis)
+    public function edit(Pegawai $pegawai)
     {
-        return view('jenis.edit',compact('jenis'));
-    
+        return view('pegawai.edit',compact('pegawai'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Jenis  $jenis
+     * @param  \App\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jenis $jenis)
+    public function update(Request $request, Pegawai $pegawai)
     {
         $request->validate([
-            'nama_jenis'=>'required',
-            'kode_jenis'=>'required',
-            'keterangan'=>'required',
+            'nama_pegawai'=>'required',
+            'nip'=>'required',
+            'jk_pegawai'=>'required',
+            'nohp_pegawai'=>'required',
+            'alamat'=>'required',
         ]);
-
-        $jenises->update($request->all());
+        $pegawai->update($request->all());
   
-        return redirect()->route('jenis.index')
-                        ->with('Berhasil','Data Berhasil Diupdate');
+        return redirect()->route('pegawai.index')
+                        ->with('Berhasil','Data Berhasil Diupdate');  
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Jenis  $jenis
+     * @param  \App\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jenis $jenis)
+    public function destroy(Pegawai $pegawai)
     {
-        $jenis->delete();
+        $pegawai->delete();
   
-        return redirect()->route('jenis.index')
+        return redirect()->route('pegawai.index')
                         ->with('Berhasil','Data Berhasil DiHapus');
     }
-    
 }

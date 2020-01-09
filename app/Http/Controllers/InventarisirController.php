@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Inventarisir;
+use App\Type;
+use App\Ruang;
+use App\Pet;
 use Illuminate\Http\Request;
 
 class InventarisirController extends Controller
@@ -25,9 +28,14 @@ class InventarisirController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('inventarisir.create');
+        $inventarisir = Inventarisir::get();
+        $types=Type::all();
+        $ruangs=Ruang::all();
+        $pets=Pet::all();
+         return view('inventarisir.create',['inventarisir' => $inventarisir],compact('types',$types,'ruangs',$ruangs,'pets',$pets));
+      
     }
 
     /**
@@ -39,15 +47,14 @@ class InventarisirController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-        'nama'=>'required',
-        'kondisi'=>'required',
-        'keterangan'=>'required',
-        'jumlah'=>'required',
-        'id_jenis'=>'required',
-        'tanggal_register'=>'required',
-        'id_ruang'=>'required',
-        'kode_inventaris'=>'required',
-        'id_petugas'=>'required',
+            'nama'=>'required',
+            'kondisi'=>'required',
+            'keterangan'=>'required',
+            'jumlah'=>'required',
+            'nama_jenis'=>'required',
+            'tanggal_register'=>'required',
+            'nama_ruangan'=>'required',
+            'nama_petugas'=>'required',
         ]);
 
         Inventarisir::create($request->all());
@@ -74,7 +81,12 @@ class InventarisirController extends Controller
      */
     public function edit(Inventarisir $inventarisir)
     {
-        return view('inventarisir.edit',compact('inventarisir'));
+        $types=Type::all();
+        $ruangs=Ruang::all();
+        $pets=Pet::all(); 
+        
+        return view('inventarisir.edit',compact('inventarisir','types','ruangs','pets'));
+     
     }
 
     /**
@@ -91,11 +103,10 @@ class InventarisirController extends Controller
             'kondisi'=>'required',
             'keterangan'=>'required',
             'jumlah'=>'required',
-            'id_jenis'=>'required',
+            'nama_jenis'=>'required',
             'tanggal_register'=>'required',
-            'id_ruang'=>'required',
-            'kode_inventaris'=>'required',
-            'id_petugas'=>'required',
+            'nama_ruangan'=>'required',
+            'nama_petugas'=>'required',
             ]);
             $inventarisir->update($request->all());
   

@@ -7,7 +7,7 @@
                 <h2>FORM LEVEL</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('level.create') }}"> Add New Jabatan</a>
+                <a class="btn btn-success" href="{{ route('level.create') }}"> Add New Level</a>
             </div>
         </div>
     </div>

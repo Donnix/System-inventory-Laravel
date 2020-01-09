@@ -1,12 +1,13 @@
 @extends('layouts.master')
+  
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Tambah Daftar Baru</h2>
+            <h2>Tambahkan Pegawai</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('pets.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('pegawai.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -22,54 +23,46 @@
     </div>
 @endif
    
-<form action="{{ route('pets.store') }}" method="POST">
+<form action="{{ route('pegawai.store') }}" method="POST">
     @csrf
- 
+  
      <div class="row">
-    
+
+     
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Petugas:</strong>
-                <input type="text" name="nama_petugas" class="form-control" placeholder="Nama Petugas">
+                <strong>Nama Pegawai</strong>
+                <input type="text" name="nama_pegawai" class="form-control" placeholder=" Masukan Nama Pegawai">
             </div>
         </div>
-       
-      
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>NIP</strong>
+                <input type="text" name="nip" class="form-control" placeholder=" Masukan Nip">
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
             <strong>Jenis Kelamin</strong>
-            <select class="form-control" name="jk_petugas" id="jk_petugas">
+            <select class="form-control" name="jk_pegawai" id="jk_pegawai">
                 <option value="Laki-laki">Laki-laki</option>
                  <option value="Perempuan" >Perempuan</option>
                  </select>
             </div>
         </div>
-        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Username:</strong>
-                <input type="text" name="username" class="form-control" placeholder="Username">
+                <strong>NO HP</strong>
+                <input type="text" name="nohp_pegawai" class="form-control" placeholder=" Masukan No HP">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Password:</strong>
-                <input type="text" name="password" class="form-control" placeholder="Password">
+                <div class="form-group">
+                    <strong>Alamat Pegawai  </strong>
+                    <textarea class="form-control" style="height:150px" name="alamat" placeholder="alamat"></textarea>
+                </div>
             </div>
-        </div>
-        
-      
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Level</strong>
-                <select class="form-control" name="nama_level" id="nama_level">
-                @foreach($levels as $level)
-                <option value="{{$level->nama_level}}">{{$level->nama_level}}</option>
-                @endforeach
-                </select>
-            </div>
-        </div>
-        
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

@@ -67,7 +67,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="/jenis" class="nav-link">
+            <a href="/type" class="nav-link">
             <i class='fas fa-edit' style='font-size:24px'></i>
               <p>
                 Data Jenis
@@ -110,6 +110,16 @@
             <i class='fas fa-building' style='font-size:24px'></i>
               <p>
                 Data Ruangan
+                
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/pegawai" class="nav-link">
+            <i class='fas fa-user-tie' style='font-size:24px'></i>
+              <p>
+                Data Pegawai
                 
               </p>
             </a>

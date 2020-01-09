@@ -44,15 +44,19 @@
             <div class="form-group">
             <strong>Status Peminjaman</strong>
             <select class="form-control" name="status_peminjaman" id="status_peminjaman">
-                <option value="Sudah">Sudah</option>
+                <option value="Pinjam">Pinjam</option>
                  <option value="Kembali" >Kembali</option>
                  </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Id Peminjaman</strong>
-                <input type="text" name="id_pegawai" class="form-control" placeholder=" MasukanID">
+                <strong>Nama Pegawai</strong>
+                <select class="form-control" name="nama_pegawai" id="nama_pegawai">
+                @foreach($pegawais as $pegawai)
+                <option value="{{$pegawai->nama_pegawai}}">{{$pegawai->nama_pegawai}}</option>
+                @endforeach
+                </select>
             </div>
         </div>
 

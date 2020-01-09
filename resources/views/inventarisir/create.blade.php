@@ -54,10 +54,15 @@
                 <input type="text" name="jumlah" class="form-control" placeholder=" Masukan jumlah ">
             </div>
         </div>
+      
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>idjenis </strong>
-                <input type="text" name="id_jenis" class="form-control" placeholder=" Masukan id jenis ">
+                <strong>Jenis</strong>
+                <select class="form-control" name="nama_jenis" id="nama_jenis">
+                @foreach($jenises as $jenis)
+                <option value="{{$jenis->nama_jenis}}">{{$jenis->nama_jenis}}</option>
+                @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -68,20 +73,22 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Id ruang</strong>
-                <input type="text" name="id_ruang" class="form-control" placeholder=" MasukanID Ruang">
+                <strong>Ruangan</strong>
+                <select class="form-control" name="nama_ruangan" id="nama_ruangan">
+                @foreach($ruangs as $ruang)
+                <option value="{{$ruang->nama_ruangan}}">{{$ruang->nama_ruangan}}</option>
+                @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>kode inventaris</strong>
-                <input type="text" name="kode_inventaris" class="form-control" placeholder=" Masukan Kode Inventaris">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Id petugas</strong>
-                <input type="text" name="id_petugas" class="form-control" placeholder=" MasukanID petugas">
+                <strong>Petugas</strong>
+                <select class="form-control" name="nama_petugas" id="nama_petugas">
+                @foreach($pets as $pet)
+                <option value="{{$pet->nama_petugas}}">{{$pet->nama_petugas}}</option>
+                @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

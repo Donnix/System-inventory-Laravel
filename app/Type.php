@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Jenis extends Model
+class Type extends Model
 {
     protected $table='jenises';
     protected $fillable = [
