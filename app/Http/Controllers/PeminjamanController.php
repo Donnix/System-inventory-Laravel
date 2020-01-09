@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Peminjaman;
 use App\Pegawai;
+use App\Inventarisir;
 use Illuminate\Http\Request;
 
 class PeminjamanController extends Controller
@@ -28,9 +29,11 @@ class PeminjamanController extends Controller
      */
     public function create(Request $request)
     {
+      
         $peminjaman = Peminjaman::get();
         $pegawais=Pegawai::all();
-         return view('peminjaman.create',['peminjaman' => $peminjaman],compact('pegawais',$pegawais));
+        $inventarisirs = Inventarisir::all();
+         return view('peminjaman.create',['peminjaman' => $peminjaman],compact('pegawais',$pegawais,'inventarisirs',$inventarisirs));
     }
 
     /**
@@ -43,6 +46,8 @@ class PeminjamanController extends Controller
     {
        
         $request->validate([
+            'nama'=>'required',
+            'jumlah'=>'required',
             'tanggal_pinjam'=>'required',
             'tanggal_kembali'=>'required',
             'status_peminjaman'=>'required',
@@ -74,8 +79,8 @@ class PeminjamanController extends Controller
     public function edit(Peminjaman $peminjaman)
     {
         $pegawais=Pegawai::get();
-        
-        return view('peminjaman.edit',compact('pegawais','peminjaman'));
+        $inventarisirs=Inventarisir::all();
+        return view('peminjaman.edit',compact('pegawais','peminjaman','inventarisirs'));
     }
 
     /**
@@ -88,6 +93,8 @@ class PeminjamanController extends Controller
     public function update(Request $request, Peminjaman $peminjaman)
     {
         $request->validate([
+            'nama'=>'required',
+            'jumlah'=>'required',
             'tanggal_pinjam'=>'required',
             'tanggal_kembali'=>'required',
             'status_peminjaman'=>'required',

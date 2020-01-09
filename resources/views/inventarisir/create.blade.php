@@ -59,8 +59,8 @@
             <div class="form-group">
                 <strong>Jenis</strong>
                 <select class="form-control" name="nama_jenis" id="nama_jenis">
-                @foreach($jenises as $jenis)
-                <option value="{{$jenis->nama_jenis}}">{{$jenis->nama_jenis}}</option>
+                @foreach($types as $type)
+                <option value="{{$type->nama_jenis}}">{{$type->nama_jenis}}</option>
                 @endforeach
                 </select>
             </div>

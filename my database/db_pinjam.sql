@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jan 2020 pada 11.05
+-- Waktu pembuatan: 09 Jan 2020 pada 15.09
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -46,8 +46,9 @@ CREATE TABLE `employes` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jk_petugas` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nama_petugas` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_level` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_level` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -56,8 +57,9 @@ CREATE TABLE `employes` (
 -- Dumping data untuk tabel `employes`
 --
 
-INSERT INTO `employes` (`id`, `username`, `password`, `nama_petugas`, `id_level`, `created_at`, `updated_at`) VALUES
-(1, 'het', 'haha', 'DOnnix', 'admin', '2020-01-07 23:13:08', '2020-01-07 23:13:08');
+INSERT INTO `employes` (`id`, `username`, `password`, `jk_petugas`, `nama_petugas`, `nama_level`, `created_at`, `updated_at`) VALUES
+(3, 'het', 'haha', 'Laki-laki', 'Judin', 'admin', '2020-01-08 08:17:25', '2020-01-08 08:17:37'),
+(4, 'iwanoyoy', 'pass', 'Laki-laki', 'Iwan', 'Petugas', '2020-01-08 09:00:38', '2020-01-08 09:00:38');
 
 -- --------------------------------------------------------
 
@@ -82,15 +84,14 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `inventarisis` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kondisi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `keterangan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(55) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kondisi` varchar(55) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keterangan` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jumlah` int(11) NOT NULL,
-  `id_jenis` bigint(11) NOT NULL,
+  `nama_jenis` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal_register` date NOT NULL,
-  `id_ruang` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kode_inventaris` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_petugas` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_ruangan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_petugas` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -99,8 +100,9 @@ CREATE TABLE `inventarisis` (
 -- Dumping data untuk tabel `inventarisis`
 --
 
-INSERT INTO `inventarisis` (`id`, `nama`, `kondisi`, `keterangan`, `jumlah`, `id_jenis`, `tanggal_register`, `id_ruang`, `kode_inventaris`, `id_petugas`, `created_at`, `updated_at`) VALUES
-(1, 'Bangku', 'Bagus', 'Buat DUDUk', 2, 1, '2020-01-02', '2', '2', '2', '2020-01-08 01:15:49', '2020-01-08 02:31:14');
+INSERT INTO `inventarisis` (`id`, `nama`, `kondisi`, `keterangan`, `jumlah`, `nama_jenis`, `tanggal_register`, `nama_ruangan`, `nama_petugas`, `created_at`, `updated_at`) VALUES
+(3, 'HP', 'Bagus', 'telpon', 1, 'Elektronik', '2020-01-13', 'Kantin', 'Iwan', '2020-01-08 18:09:41', '2020-01-08 18:09:41'),
+(4, 'Speaker', 'Bagus', 'Pengencang Suara', 100, 'Elektronik', '2020-01-09', 'Kantin', 'Iwan', '2020-01-09 06:15:10', '2020-01-09 06:15:10');
 
 -- --------------------------------------------------------
 
@@ -122,7 +124,35 @@ CREATE TABLE `jenises` (
 --
 
 INSERT INTO `jenises` (`id`, `nama_jenis`, `kode_jenis`, `keterangan`, `created_at`, `updated_at`) VALUES
-(4, 'Hewan', '13', 'dadaada', '2020-01-07 21:06:34', '2020-01-07 21:06:34');
+(4, 'Hewan', '13', 'dadaada', '2020-01-07 21:06:34', '2020-01-07 21:06:34'),
+(5, 'Elektronik', '11', 'Hati Hati', '2020-01-08 09:01:55', '2020-01-08 09:01:55');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `laporanborrowings`
+--
+
+CREATE TABLE `laporanborrowings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jumlah` int(10) NOT NULL,
+  `tanggal_pinjam` date NOT NULL,
+  `tanggal_kembali` date NOT NULL,
+  `status_peminjaman` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_pegawai` varchar(55) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `laporanborrowings`
+--
+
+INSERT INTO `laporanborrowings` (`id`, `nama`, `jumlah`, `tanggal_pinjam`, `tanggal_kembali`, `status_peminjaman`, `nama_pegawai`, `created_at`, `updated_at`) VALUES
+(3, 'Laptop', 2, '2020-01-09', '2020-01-10', 'Pinjam', 'Donnix', NULL, NULL),
+(5, 'HP', 2, '2020-01-12', '2020-01-14', 'Pinjam', 'agis', NULL, NULL),
+(6, 'Speaker', 2, '2020-01-07', '2020-01-18', 'Pinjam', 'Donnix', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -143,7 +173,8 @@ CREATE TABLE `levels` (
 --
 
 INSERT INTO `levels` (`id`, `nama_level`, `keterangan`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'CRUD ALL', '2020-01-07 20:25:11', '2020-01-08 00:24:11');
+(1, 'admin', 'CRUD ALL', '2020-01-07 20:25:11', '2020-01-08 00:24:11'),
+(2, 'Petugas', 'Hanya CRUD JENIS', '2020-01-08 07:56:59', '2020-01-08 07:56:59');
 
 -- --------------------------------------------------------
 
@@ -172,7 +203,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2020_01_08_014520_create_peminjamans_table', 5),
 (9, '2020_01_08_015555_create_detail_peminjamans_table', 6),
 (10, '2020_01_08_015837_create_levels_table', 7),
-(11, '2020_01_08_020002_create_pegawai_table', 8);
+(11, '2020_01_08_020002_create_pegawai_table', 8),
+(12, '2020_01_09_052254_create_laporansborrowings_table', 9);
 
 -- --------------------------------------------------------
 
@@ -189,17 +221,27 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pegawai`
+-- Struktur dari tabel `pegawas`
 --
 
-CREATE TABLE `pegawai` (
+CREATE TABLE `pegawas` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nama_pegawai` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nip` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_pegawai` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nip` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jk_pegawai` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nohp_pegawai` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alamat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `pegawas`
+--
+
+INSERT INTO `pegawas` (`id`, `nama_pegawai`, `nip`, `jk_pegawai`, `nohp_pegawai`, `alamat`, `created_at`, `updated_at`) VALUES
+(1, 'Donnix', '1213', 'Laki-laki', '0813', 'Tajur', '2020-01-08 07:46:50', '2020-01-08 07:48:43'),
+(2, 'agis', '1214', 'Perempuan', '08139903245', 'Cicurug', '2020-01-08 08:29:43', '2020-01-08 08:29:43');
 
 -- --------------------------------------------------------
 
@@ -209,20 +251,40 @@ CREATE TABLE `pegawai` (
 
 CREATE TABLE `peminjamans` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `nama` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jumlah` int(10) NOT NULL,
   `tanggal_pinjam` date NOT NULL,
   `tanggal_kembali` date NOT NULL,
   `status_peminjaman` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_pegawai` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_pegawai` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `peminjamans`
+-- Trigger `peminjamans`
 --
-
-INSERT INTO `peminjamans` (`id`, `tanggal_pinjam`, `tanggal_kembali`, `status_peminjaman`, `id_pegawai`, `created_at`, `updated_at`) VALUES
-(1, '2020-01-02', '2020-01-15', 'Kembali', '1', '2020-01-08 00:17:53', '2020-01-08 00:17:53');
+DELIMITER $$
+CREATE TRIGGER `abis hapus` AFTER DELETE ON `peminjamans` FOR EACH ROW UPDATE inventarisis
+ SET jumlah = jumlah+OLD.jumlah
+ WHERE
+ nama= OLD.nama
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `kurang inventaris` AFTER INSERT ON `peminjamans` FOR EACH ROW UPDATE inventarisis
+ SET jumlah = jumlah-NEW.jumlah
+ WHERE
+ nama= NEW.nama
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `laporan` AFTER DELETE ON `peminjamans` FOR EACH ROW INSERT INTO laporanborrowings
+   ( id,nama,jumlah,tanggal_pinjam,tanggal_kembali,status_peminjaman,nama_pegawai)
+   VALUES
+   ( OLD.id,OLD.nama,OLD.jumlah,OLD.tanggal_pinjam,OLD.tanggal_kembali,OLD.status_peminjaman,OLD.nama_pegawai)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -244,7 +306,8 @@ CREATE TABLE `ruangans` (
 --
 
 INSERT INTO `ruangans` (`id`, `nama_ruangan`, `kode_ruangan`, `keterangan`, `created_at`, `updated_at`) VALUES
-(1, 'Ruang  Cinema', '134', 'buat nonton', '2020-01-08 02:20:59', '2020-01-08 02:21:13');
+(1, 'Ruang  Cinema', '134', 'buat nonton', '2020-01-08 02:20:59', '2020-01-08 02:21:13'),
+(2, 'Kantin', '119', 'Makan', '2020-01-08 09:02:38', '2020-01-08 09:02:38');
 
 -- --------------------------------------------------------
 
@@ -256,12 +319,20 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_level` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `id_level`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'donnix', 'admin@admin.com', '', NULL, '$2y$10$c.SJ0uU7MHuoQVsQC2y4GetOG5ZD8zIJHbm839QUfJtrUVS0uu3By', NULL, '2020-01-08 20:46:04', '2020-01-08 20:46:04');
 
 --
 -- Indexes for dumped tables
@@ -298,6 +369,12 @@ ALTER TABLE `jenises`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `laporanborrowings`
+--
+ALTER TABLE `laporanborrowings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `levels`
 --
 ALTER TABLE `levels`
@@ -316,9 +393,9 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indeks untuk tabel `pegawai`
+-- Indeks untuk tabel `pegawas`
 --
-ALTER TABLE `pegawai`
+ALTER TABLE `pegawas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -354,7 +431,7 @@ ALTER TABLE `detail_peminjamans`
 -- AUTO_INCREMENT untuk tabel `employes`
 --
 ALTER TABLE `employes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -366,49 +443,55 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `inventarisis`
 --
 ALTER TABLE `inventarisis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenises`
 --
 ALTER TABLE `jenises`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `laporanborrowings`
+--
+ALTER TABLE `laporanborrowings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `levels`
 --
 ALTER TABLE `levels`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT untuk tabel `pegawai`
+-- AUTO_INCREMENT untuk tabel `pegawas`
 --
-ALTER TABLE `pegawai`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pegawas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `peminjamans`
 --
 ALTER TABLE `peminjamans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `ruangans`
 --
 ALTER TABLE `ruangans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

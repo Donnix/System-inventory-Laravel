@@ -15,16 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('logins','AuthController');
+
 Route::resource('register','AuthController');
 Route::resource('level','LevelController');
-Route::resource('type','TypeController');
-
+Route::resource('types','TypeController');
+Route::get('/laporanborrowings','LaporanborrowingController@index')->name('laporanborrowings');
+Route::get('/laporanborrowings/cari','LaporanborrowingController@cari');
+Route::get('/laporanborrowings/print','LaporanborrowingController@print')->name('laporanborrowings.print');
+Route::get('/laporanborrowings/show','LaporanborrowingController@show')->name('laporanborrowings.show');
 Route::resource('peminjaman','PeminjamanController');
 Route::resource('inventarisir','InventarisirController');
 Route::resource('pets','PetController');
 Route::resource('ruangs','RuangController');
 Route::resource('pegawai','PegawaiController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

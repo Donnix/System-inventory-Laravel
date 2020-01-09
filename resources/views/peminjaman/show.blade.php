@@ -20,6 +20,21 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Jumlah:</strong>
+                {{ $peminjaman->tanggal_pinjam }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tanggal Pinjam:</strong>
+                {{ $peminjaman->tanggal_pinjam }}
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Tanggal Pinjam:</strong>
                 {{ $peminjaman->tanggal_pinjam }}
             </div>

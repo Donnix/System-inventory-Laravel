@@ -22,6 +22,8 @@
         <tr>
         <td>NO</td>
             <th>ID Peminjaman</th>
+            <th>Nama Barang</th>
+            <th>Jumlah</th>
             <th>Tanggal Pinjam</th>
             <th>Tanggal Kembali</th>
             <th>Status Peminjaman</th>
@@ -33,6 +35,8 @@
         <tr>
         <td>{{ ++$i }}</td>
             <td>{{ $peminjaman->id }}</td>
+            <td>{{ $peminjaman->nama }}</td>
+            <td>{{ $peminjaman->jumlah }}</td>
             <td>{{ $peminjaman->tanggal_pinjam }}</td>
             <td>{{ $peminjaman->tanggal_kembali}}</td>
             <td>{{ $peminjaman->status_peminjaman}}</td>

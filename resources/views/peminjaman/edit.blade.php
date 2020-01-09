@@ -29,7 +29,23 @@
    
          <div class="row">
 
-      
+         <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama Barang</strong>
+                <select class="form-control" name="nama" id="nama">
+                    @foreach($inventarisirs as $inventarisir)
+                    <option value="{{$inventarisir->nama}}" @if($peminjaman->nama == $inventarisir->nama)selected @endif>{{$inventarisir->nama}}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Jumlah</strong>
+                <input type="text" value="{{$peminjaman->jumlah}}" name="jumlah" class="form-control" placeholder=" Masukan Jumlah">
+            </div>
+        </div>
          <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal Pinjam</strong>

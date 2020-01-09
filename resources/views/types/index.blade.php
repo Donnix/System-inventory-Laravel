@@ -28,7 +28,7 @@
            
             <th width="280px">Action</th>
         </tr>
-        @foreach ($jenises as $type)
+        @foreach ($types as $type)
         <tr>
         <td>{{ ++$i }}</td>
             <td>{{ $type->id }}</td>

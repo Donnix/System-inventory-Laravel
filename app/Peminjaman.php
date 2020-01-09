@@ -8,6 +8,6 @@ class Peminjaman extends Model
 {
     protected $table='peminjamans';
     protected $fillable = [
-        'tanggal_pinjam','tanggal_kembali','status_peminjaman','nama_pegawai'
+        'nama','jumlah','tanggal_pinjam','tanggal_kembali','status_peminjaman','nama_pegawai',
     ];
 }

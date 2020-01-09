@@ -67,7 +67,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="/type" class="nav-link">
+            <a href="/types" class="nav-link">
             <i class='fas fa-edit' style='font-size:24px'></i>
               <p>
                 Data Jenis
@@ -125,8 +125,17 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="/laporanborrowings" class="nav-link">
+            <i class='fas fa-book' style='font-size:24px'></i>
+              <p>
+                Laporan Peminjaman
+                
+              </p>
+            </a>
+          </li>
             <li class="nav-item">
-            <a href="/logins" onClick="return confirm('Apakah Yakin ingin  Logout ?')" class="nav-link">
+            <a href="/" onClick="return confirm('Apakah Yakin ingin  Logout ?')" class="nav-link">
             <i class='fas fa-door-open' style='font-size:24px'></i>
               <p>
                 Logout

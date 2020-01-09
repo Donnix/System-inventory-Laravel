@@ -30,6 +30,23 @@
 
      <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Nama Barang</strong>
+                <select class="form-control" name="nama" id="nama">
+                @foreach($inventarisirs as $inventaris)
+                <option value="{{$inventaris->nama}}">{{$inventaris->nama}}</option>
+                @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Jumlah</strong>
+                <input type="text" name="jumlah" class="form-control" placeholder=" Masukan Jumlah">
+            </div>
+        </div>
+     <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Tanggal Pinjam</strong>
                 <input type="date" name="tanggal_pinjam" class="form-control" >
             </div>
