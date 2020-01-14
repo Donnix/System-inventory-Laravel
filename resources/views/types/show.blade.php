@@ -21,14 +21,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>NAMA Jenis:</strong>
-                {{ $type->nama_level }}
+                {{ $type->nama_jenis }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>KODE Jenis:</strong>
-                {{ $type->nama_level }}
+                {{ $type->kode_jenis }}
             </div>
         </div>
 

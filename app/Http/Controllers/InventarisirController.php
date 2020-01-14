@@ -15,12 +15,16 @@ class InventarisirController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $inventarisirs = Inventarisir::latest()->paginate(5);
+      
+            $inventarisirs = Inventarisir::latest()->paginate(5);
+  
         
         return view('inventarisir.index',compact('inventarisirs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+
+
     }
 
     /**

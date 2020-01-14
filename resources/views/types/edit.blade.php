@@ -32,14 +32,14 @@
          <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nama type</strong>
-                <input type="text" name="type" value="{{$type->nama_jenis}}" class="form-control" placeholder=" Masukan Nama type">
+                <input type="text" name="nama_jenis" value="{{$type->nama_jenis}}" class="form-control" placeholder=" Masukan Nama type">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Kode Jenis</strong>
-                <input type="text" name="type" value="{{$type->kode_jenis}}" class="form-control" placeholder=" Masukan kode">
+                <input type="text" name="kode_jenis" value="{{$type->kode_jenis}}" class="form-control" placeholder=" Masukan kode">
             </div>
         </div>
 

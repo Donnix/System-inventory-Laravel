@@ -57,11 +57,9 @@
                <li class="nav-header">Data</li>
           <li class="nav-item">
             <a href="/peminjaman" class="nav-link">
-           
             <i class='fas fa-list-alt' style='font-size:24px'></i>
               <p>
                 Data Pinjaman
-                
               </p>
             </a>
           </li>
@@ -71,7 +69,6 @@
             <i class='fas fa-edit' style='font-size:24px'></i>
               <p>
                 Data Jenis
-                
               </p>
             </a>
           </li>
@@ -80,7 +77,6 @@
             <i class='fas fa-award' style='font-size:24px'></i>
               <p>
                 Data Level
-                
               </p>
             </a>
           </li>
@@ -90,7 +86,6 @@
             <i class='fas fa-highlighter' style='font-size:24px'></i>
               <p>
                 Data inventaris
-                
               </p>
             </a>
           </li>
@@ -100,7 +95,6 @@
             <i class='fas fa-user-tie' style='font-size:24px'></i>
               <p>
                 Data Petugas
-                
               </p>
             </a>
           </li>
@@ -110,7 +104,6 @@
             <i class='fas fa-building' style='font-size:24px'></i>
               <p>
                 Data Ruangan
-                
               </p>
             </a>
           </li>
@@ -120,7 +113,6 @@
             <i class='fas fa-user-tie' style='font-size:24px'></i>
               <p>
                 Data Pegawai
-                
               </p>
             </a>
           </li>
@@ -130,7 +122,6 @@
             <i class='fas fa-book' style='font-size:24px'></i>
               <p>
                 Laporan Peminjaman
-                
               </p>
             </a>
           </li>
@@ -139,11 +130,11 @@
             <i class='fas fa-door-open' style='font-size:24px'></i>
               <p>
                 Logout
-                
               </p>
             </a>
           </li>
-      </nav>
+          </ul>
+          </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

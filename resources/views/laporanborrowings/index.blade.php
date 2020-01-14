@@ -37,7 +37,7 @@
     </div>
   </form>
 
-</form> 
+
     <table class="table table-bordered">
         <tr>
            
