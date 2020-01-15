@@ -131,4 +131,6 @@ class InventarisirController extends Controller
         return redirect()->route('inventarisir.index')
                         ->with('Berhasil','Data Berhasil DiHapus');
     }
+      
+   
 }

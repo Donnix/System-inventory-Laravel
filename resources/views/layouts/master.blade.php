@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="{{asset('adminlte/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+ 
+ 
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -29,7 +31,9 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <div class="pull-left">
-                <h2>Welcome </h2>
+      <div class="card-body">
+                  <h5> <b> Welcome {{ ucfirst(Auth()->user()->name) }}</b></h5>
+                  </div>
             </div>
   </nav>
   <!-- /.navbar -->
@@ -55,6 +59,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-header">Data</li>
+               @if(Auth::user()->nama_level == "admin")
           <li class="nav-item">
             <a href="/peminjaman" class="nav-link">
             <i class='fas fa-list-alt' style='font-size:24px'></i>
@@ -125,8 +130,28 @@
               </p>
             </a>
           </li>
+          @elseif(Auth::user()->nama_level == "Petugas")
+          <li class="nav-item">
+            <a href="/peminjaman" class="nav-link">
+            <i class='fas fa-list-alt' style='font-size:24px'></i>
+              <p>
+                Peminjaman
+              </p>
+            </a>
+          </li>
+          @else
+
+          <li class="nav-item">
+            <a href="/peminjaman" class="nav-link">
+            <i class='fas fa-list-alt' style='font-size:24px'></i>
+              <p>
+                Peminjaman
+              </p>
+            </a>
+          </li>
+@endif
             <li class="nav-item">
-            <a href="/" onClick="return confirm('Apakah Yakin ingin  Logout ?')" class="nav-link">
+            <a href="{{url('logout')}}" onClick="return confirm('Apakah Yakin ingin  Logout ?')" class="nav-link">
             <i class='fas fa-door-open' style='font-size:24px'></i>
               <p>
                 Logout

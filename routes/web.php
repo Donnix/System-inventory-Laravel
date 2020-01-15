@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('login', 'AuthController@index');
+Route::get('/logins', 'AuthController@index')->name('login');
   Route::post('post-login', 'AuthController@postLogin'); 
   Route::get('registration', 'AuthController@registration');
   Route::post('post-registration', 'AuthController@postRegistration'); 
@@ -39,7 +39,7 @@ Route::resource('pegawai','PegawaiController');
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+// Auth::routes();
 

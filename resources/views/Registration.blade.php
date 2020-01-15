@@ -12,12 +12,19 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="{{url('style.css')}}">
- 
+<style>
+body{
+    background-image:url(background/login.jpg);
+    background-size:100%;  }
+
+
+    }
+  </style>
 </head>
 <body>
 <div class="container-fluid">
   <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+  
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
@@ -43,6 +50,19 @@
                   <span class="error">{{ $errors->first('email') }}</span>
                   @endif    
                 </div> 
+
+                <div class="form-label-group">
+                <select class="form-control" name="nama_level" id="nama_level">
+                @foreach($levels as $level)
+                <option value="{{$level->nama_level}}">{{$level->nama_level}}</option>
+                @endforeach
+                </select>
+              
+                  @if ($errors->has('email'))
+                  <span class="error">{{ $errors->first('email') }}</span>
+                  @endif    
+                </div> 
+ 
  
                 <div class="form-label-group">
                   <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
@@ -55,12 +75,12 @@
  
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign Up</button>
                 <div class="text-center">If you have an account?
-                  <a class="small" href="{{url('login')}}">Sign In</a></div>
+                  <a class="small" href="{{url('logins')}}">Sign In</a></div>
               </form>
             </div>
           </div>
         </div>
-      </div>
+     
     </div>
   </div>
 </div>

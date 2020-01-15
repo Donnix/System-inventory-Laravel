@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Form - Tutsmake.com</title>
+<title>Inventaris.com</title>
  
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,16 +12,26 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="{{url('style.css')}}">
- 
+<style>
+body{
+    background-image:url(background/login.jpg);
+    background-size:100%;  }
+
+
+}
+.container{
+  float:right;
+}
+  </style>
 </head>
 <body>
 <div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+ 
+  
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
-          <div class="row">
+      
             <div class="col-md-9 col-lg-8 mx-auto">
               <h3 class="login-heading mb-4">Welcome back!</h3>
                <form action="{{url('post-login')}}" method="POST" id="logForm">
@@ -51,9 +61,9 @@
                   <a class="small" href="{{url('registration')}}">Sign Up</a></div>
               </form>
             </div>
-          </div>
-        </div>
-      </div>
+          
+            
+   </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,25 @@
 @extends('layouts.master')
  
 @section('content')
+@if(Auth::user()->nama_level == "Peminjam")
+<div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>FORM PEMINJAMAN</h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('peminjaman.create') }}"> Add New Pinjaman</a>
+            </div>
+        </div>
+    </div>
+   
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+   
+    @else
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -59,5 +78,6 @@
     </table>
   
     {!! $peminjamans->links() !!}
-      
+
+    @endif
 @endsection
