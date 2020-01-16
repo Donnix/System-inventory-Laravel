@@ -41,6 +41,12 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Nama Peminjam</strong>
+                <input type="text" name="nama_peminjam" class="form-control" value="{{ ucfirst(Auth()->user()->name) }}"   readonly="readonly">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Jumlah</strong>
                 <input type="text" name="jumlah" class="form-control" placeholder=" Masukan Jumlah">
             </div>
@@ -62,7 +68,7 @@
             <strong>Status Peminjaman</strong>
             <select class="form-control" name="status_peminjaman" id="status_peminjaman">
                 <option value="Pinjam">Pinjam</option>
-                 <option value="Kembali" >Kembali</option>
+                 <option value="Sewa" >Sewa</option>
                  </select>
             </div>
         </div>

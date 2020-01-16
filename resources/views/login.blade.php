@@ -17,14 +17,9 @@ body{
     background-image:url(background/login.jpg);
     background-size:100%;  }
 
-
-}
-.container{
-  float:right;
-}
   </style>
 </head>
-<body>
+<body >
 <div class="container-fluid">
  
   

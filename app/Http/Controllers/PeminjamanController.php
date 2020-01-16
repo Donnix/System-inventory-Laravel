@@ -47,6 +47,7 @@ class PeminjamanController extends Controller
        
         $request->validate([
             'nama'=>'required',
+            'nama_peminjam'=>'required',
             'jumlah'=>'required',
             'tanggal_pinjam'=>'required',
             'tanggal_kembali'=>'required',
@@ -94,6 +95,7 @@ class PeminjamanController extends Controller
     {
         $request->validate([
             'nama'=>'required',
+            'nama_peminjam'=>'required',
             'jumlah'=>'required',
             'tanggal_pinjam'=>'required',
             'tanggal_kembali'=>'required',

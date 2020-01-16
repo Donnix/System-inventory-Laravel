@@ -20,6 +20,7 @@
                      <th scope="col">No</th>
                     <th scope="col">ID Peminjaman</th>
                     <th scope="col">Nama Barang</th>
+                    <th scope="col">Nama Peminjam</th>
                     <th scope="col">Jumlah</th>
                     <th scope="col">Tanggal Pinjam</th>
                     <th scope="col">Tanggal Kembali</th>
@@ -32,6 +33,7 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $laporanpinjaman->id }}</td>
              <td>{{ $laporanpinjaman->nama }}</td>
+             <td>{{ $laporanpinjaman->nama_peminjam }}</td>
                 <td>{{ $laporanpinjaman->jumlah }}</td>
                 <td>{{ $laporanpinjaman->tanggal_pinjam }}</td>
                 <td>{{ $laporanpinjaman->tanggal_kembali }}</td>
@@ -56,7 +58,7 @@ Kepala Pendidikan SMK WIKRAMA INDONESIA
 </br>
 
 <h6 align="right"> 
-Prof Abdul Hilman Thiusana
+Prof Donnix Afrilliando ,MMa.Spg
 
 </h6>
 <script type="text/javascript">

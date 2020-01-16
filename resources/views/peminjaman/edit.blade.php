@@ -39,7 +39,12 @@
                 </select>
             </div>
         </div>
-
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama Peminjam</strong>
+                <input type="text" name="nama_peminjam" class="form-control" value="{{$peminjaman->nama_peminjam }}" placeholder=" Masukan Nama Anda">
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jumlah</strong>
@@ -63,7 +68,7 @@
             <strong>Status Peminjaman</strong>
             <select class="form-control" name="status_peminjaman" id="status_peminjaman">
                 <option value="Pinjam" @if ($peminjaman->status_peminjaman == "Pinjam")selected @endif>Pinjam</option>
-                 <option value="Kembali" @if ($peminjaman->status_peminjaman == "Kembali")selected @endif>Kembali</option>
+                 <option value="Sewa" @if ($peminjaman->status_peminjaman == "Sewa")selected @endif>Sewa</option>
                  </select>
             </div>
         </div>

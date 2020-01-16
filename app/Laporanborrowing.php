@@ -8,6 +8,6 @@ class Laporanborrowing extends Model
 {
     protected $table="laporanborrowings";
         protected $fillable =[
-            'nama','jumlah','tanggal_pinjam','tanggal_kembali','status_peminjaman','nama_pegawai'
+            'nama','nama_peminjam','jumlah','tanggal_pinjam','tanggal_kembali','status_peminjaman','nama_pegawai'
         ];
 }

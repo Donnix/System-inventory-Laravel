@@ -18,6 +18,24 @@
                 {{ $peminjaman->id }}</div>
         </div>
 
+
+        <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama Barang:</strong>
+                {{ $peminjaman->nama }}</div>
+        </div>
+
+
+        <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama Peminjam:</strong>
+                {{ $peminjaman->nama_peminjam }}</div>
+        </div>
+
+
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jumlah:</strong>
