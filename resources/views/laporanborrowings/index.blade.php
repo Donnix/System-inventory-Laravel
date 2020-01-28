@@ -19,7 +19,7 @@
                         <label class="col-sm-2 mb-3"><b>-</b></label>
                     </div>
                     <div class="col-auto">
-                        <input type="date" class="form-contorl @error('endDate')is-invalid @enderror mb-3" name="endDate" id="endDate">
+                        <input type="date" class="form-control @error('endDate')is-invalid @enderror mb-3" name="endDate" id="endDate">
                         @error('endDate')
                         <div class="invalid-feedback">{{$message}}</div>
                             @enderror

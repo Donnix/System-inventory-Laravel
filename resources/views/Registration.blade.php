@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Registration Form - Tutsmake.com</title>
+<title>inventaris.com</title>
  
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,15 +16,12 @@
 body{
     background-image:url(background/login.jpg);
     background-size:100%;  }
-
-
     }
   </style>
 </head>
 <body>
 <div class="container-fluid">
   <div class="row no-gutter">
-  
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
@@ -50,7 +47,6 @@ body{
                   <span class="error">{{ $errors->first('email') }}</span>
                   @endif    
                 </div> 
-
                 <div class="form-label-group">
                 <select class="form-control" name="nama_level" id="nama_level">
                 @foreach($levels as $level)

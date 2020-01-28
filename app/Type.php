@@ -8,6 +8,6 @@ class Type extends Model
 {
     protected $table='jenises';
     protected $fillable = [
-        'nama_jenis','kode_jenis','keterangan'
+        'nama_jenis','kode_jenis','keterangan' 
     ];
 }

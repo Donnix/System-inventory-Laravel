@@ -51,7 +51,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>jumlah </strong>
-                <input type="text" name="jumlah" class="form-control" placeholder=" Masukan jumlah ">
+                <input type="number" name="jumlah" class="form-control" placeholder=" Masukan jumlah ">
             </div>
         </div>
       

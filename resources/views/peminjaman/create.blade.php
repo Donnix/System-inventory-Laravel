@@ -48,7 +48,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jumlah</strong>
-                <input type="text" name="jumlah" class="form-control" placeholder=" Masukan Jumlah">
+                <input type="number" name="jumlah" class="form-control" placeholder=" Masukan Jumlah">
             </div>
         </div>
      <div class="col-xs-12 col-sm-12 col-md-12">

@@ -39,7 +39,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>NIP</strong>
-                <input type="text" name="nip" class="form-control" placeholder=" Masukan Nip">
+                <input type="number" name="nip" class="form-control" placeholder=" Masukan Nip">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -54,7 +54,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>NO HP</strong>
-                <input type="text" name="nohp_pegawai" class="form-control" placeholder=" Masukan No HP">
+                <input type="number" name="nohp_pegawai" class="form-control" placeholder=" Masukan No HP">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
