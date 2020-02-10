@@ -47,6 +47,8 @@ body{
                   <span class="error">{{ $errors->first('email') }}</span>
                   @endif    
                 </div> 
+
+                
                 <div class="form-label-group">
                 <select class="form-control" name="nama_level" id="nama_level">
                 @foreach($levels as $level)

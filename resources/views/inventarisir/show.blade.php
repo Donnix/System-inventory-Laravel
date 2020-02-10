@@ -61,7 +61,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Ruangan:</strong>
-                {{ $inventarisir->nama_ruang }}
+                {{ $inventarisir->nama_ruangan }}
             </div>
         </div>
      
